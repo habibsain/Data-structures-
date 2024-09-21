@@ -18,7 +18,7 @@ Node* createNode(int value) {
     return newNode;
 }
 
-void insert(Node* root, int value){
+void insert(Node*& root, int value){
     if (root == nullptr) {
         root = createNode(value);
     }
@@ -28,6 +28,7 @@ void insert(Node* root, int value){
     else if (value > root->data) {
         insert(root->right, value);
     }
+
 }
 
 void printTree(Node* root) {
