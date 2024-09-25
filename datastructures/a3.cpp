@@ -28,7 +28,6 @@ void insert(Node*& root, int value){
     else if (value > root->data) {
         insert(root->right, value);
     }
-
 }
 
 void printTree(Node* root) {
