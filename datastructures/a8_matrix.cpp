@@ -105,7 +105,6 @@ vector<vector<double>> inverse(const vector<vector<double>>& a) {
     //reducing the diagonal matrix into identity matrix
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            double f
             c[i][j] /= b[i][i];
         }
     }
