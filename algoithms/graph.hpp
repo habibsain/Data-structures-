@@ -9,20 +9,20 @@ class Graph {
     vector<int> v_List;
 
     public: 
-        Graph(){
         //Constructor
-        //this->v_List = verticex_list;
-            cout << "Class is instantiated" << endl;
+        Graph();
 
-        }
+        //setter
+        void set_vertices(vector<int> &vertex_list);
 
-        void set_vertices(vector<int> &vertex_list){
-            v_List = vertex_list;
-        }
+        //getter
+        vector<int> get_verices();
 
-        vector<int> get_verices(){
-            return v_List;
-        }
+        //reversing the list
+        vector<int> rev_list();
+
+        //Destructor
+        ~Graph();
 };
 
 #endif
