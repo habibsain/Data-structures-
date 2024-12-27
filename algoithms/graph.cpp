@@ -12,10 +12,18 @@ Graph::Graph(){
 }
 
 void Graph::set_vertices(vector<int> &vertex_list){
-    this->v_List = vertex_list;
+    this->v_List;
 }
 
-vector<int> Graph::get_verices(){
+void Graph::set_edges(vector<vector<int>> &edge_list){
+    for (auto edge: edge_list){
+        this->adj_List[edge[0]].push_back(edge[1]);
+    }
+    for (auto edge: edge_list){
+    }
+}
+
+vector<int> Graph::get_vertices(){
     return this->v_List;
 }
 
