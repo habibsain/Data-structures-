@@ -18,7 +18,7 @@ int main(){
     Graph g;
     g.set_vertices(vertices);
     cout << "Display vertices of the graph" << endl;
-    display_list(g.get_verices());
+    display_list(g.get_vertices());
     cout << "List reversal" << endl;
     display_list(g.rev_list());
     return 0;
