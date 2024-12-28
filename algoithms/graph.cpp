@@ -12,7 +12,8 @@ Graph::Graph(){
 }
 
 void Graph::set_vertices(vector<int> &vertex_list){
-    this->v_List;
+    //cout << "Setting vertices" << endl;
+    this->v_List = vertex_list;
 }
 
 void Graph::set_edges(vector<vector<int>> &edge_list){

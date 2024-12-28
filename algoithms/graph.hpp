@@ -30,6 +30,10 @@ class Graph {
         //reversing the list
         vector<int> rev_list();
 
+        void remove_edge(vector<int> edge); 
+
+        void remove_vertex(int vertex);
+
         //Destructor
         ~Graph();
 };
