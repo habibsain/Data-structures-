@@ -17,15 +17,25 @@ void Graph::set_vertices(vector<int> &vertex_list){
 }
 
 void Graph::set_edges(vector<vector<int>> &edge_list){
+    cout << "Setting edges" << endl;
     for (auto edge: edge_list){
-        this->adj_List[edge[0]].push_back(edge[1]);
+        cout << edge[0] << " " << edge[1] << endl;
+        this->adj_List.first = edge[0];
+        this->adj_List.second.push_back(edge[1]);
+        cout << "Done" << endl;
     }
     for (auto edge: edge_list){
     }
 }
 
 vector<int> Graph::get_vertices(){
+    cout << "Getting vertices" << endl;
     return this->v_List;
+}
+
+pair<int,vector<int>> Graph::get_edges(){
+    cout << "Getting edges" << endl;
+    return this->adj_List;
 }
 
 vector<int> Graph::rev_list(){
