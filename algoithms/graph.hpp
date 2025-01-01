@@ -7,39 +7,79 @@
 using namespace std;
 
 class Graph {
-    vector<int> v_List;
-    vector<vector<int>> edge_List;
-    pair<int,vector<int>> adj_List;
-    vector<int, pair<int, vector<int>>> list_of_edges;
-
-    public: 
+    vector<vector<int>> uAdjList;
+    vector<vector<pair<int,int>>> wAdjList;
+    int len;
+    
+    bool weighted;
+    bool directed; 
         //Constructor
-        Graph();
+    public:
+        Graph(int numVertices, bool isDirected = false, bool isWeighted = false){
+            directed = isDirected;
+            weighted = isWeighted;
+            
+            if(weighted){
+                //cout << wAdjList.size() << endl;
+                wAdjList.resize(numVertices);
+                //cout << wAdjList.size() << endl;
+                len = numVertices;
+            }
+            else{
+                uAdjList.resize(numVertices);
+                len = numVertices;
+            }
 
-        //vertex_setter(Done)
-        void set_vertices(vector<int> &vertex_list);
+        };
+    public:
 
-        //edge_setter(Done)
-        void set_edges(vector<vector<int>> &edge_list);
+        void addEdge(int u, int v){
+            if(u >= len || v >= len){
+                cout << "invalid vertex input" << endl;
+            }
+            else{
+                uAdjList[u].push_back(v);
+                if(!directed){
+                    uAdjList[v].push_back(u);
+                }
+            }
+        };
 
-        //vertex_getter(Done)
-        vector<int> get_vertices();
-        
-        pair<int,vector<int>> get_edges();
+        void addEdge(int u, int v, int w){
+            if(u >= len || v >= len){
+                cout << "invalid vertex input" << endl;
+                exit(0);
+            }
+            else{
+                wAdjList[u].push_back(make_pair(v,w));
+                if(!directed){
+                    wAdjList[v].push_back(make_pair(u,w));
+                }
+            }
 
-        void add_vertex(int vertex);
+        };
+        vector<int> getAdjListUnWeight(int u){
+            cout<<"Called unweighted util"<<endl;
+            return uAdjList[u];
+        };
 
-        void add_edge(vector<int> edge);
+        vector<pair<int,int>> getAdjListWeight(int u){
+            cout<<"Called weighted util"<<endl;
+            return wAdjList[u];
+        };
 
-        //reversing the list(Done)
-        vector<int> rev_list();
 
-        void remove_edge(vector<int> edge); 
-
-        void remove_vertex(int vertex);
-
-        //Destructor
-        ~Graph();
+        void printList(){
+            if(weighted){
+                for (auto u = 0; u < wAdjList.size(); u++){
+                    cout << u << ": ";
+                    for(auto v: wAdjList[u]){
+                        cout << "("<< v.first << ", " << v.second << "), ";
+                    }
+                    cout << endl;
+                }
+            }
+        };   
 };
 
 #endif
