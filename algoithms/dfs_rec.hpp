@@ -11,6 +11,7 @@ class Dfs_rec
 {
     vector<bool> visited;
     vector<int> prev;
+    int clock;
 
     public: 
 
@@ -18,6 +19,7 @@ class Dfs_rec
         int len = graph.size();
         visited.resize(len,false);
         prev.resize(len, -1);
+        cout<< "dfs initialised"<< endl;
     };
 
     //void previsit(v)
@@ -25,17 +27,23 @@ class Dfs_rec
 
     void dfsUtil(Graph& g, int v){
         visited[v] = true;
+        cout << "discovered " << v << " at ";
+        cout << clock << endl;
+        clock += 1;
+        //previsit(vert);
         for(auto vert: g.getAdjListUnWeight(v)){
             if(!visited[vert]){
                 prev[vert] = v;
-                //previsit(vert);
                 dfsUtil(g, vert);
             }    
-        }
+        }cout << "finished " << v << " at ";
+        cout << clock << endl;
+        clock += 1;
         //postvisit(v);
     };
 
-    void dfsRun(graph& g){
+    void dfsRun(Graph& g){
+        clock = 0; 
         for(int i = 0; i < g.size(); i++){
             if(!visited[i]){
                 dfsUtil(g, i);

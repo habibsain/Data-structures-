@@ -2,7 +2,7 @@
 #include <vector>
 #include <utility>
 #include "graph.hpp"
-#include "dfs_itr.hpp"
+//#include "dfs_itr.hpp"
 #include "dfs_rec.hpp"
 
 typedef vector<pair<int,int>> wAdj;
@@ -13,7 +13,15 @@ int main(){
     //DFS recursive
     //UnWeighted
     //UnDirected
-    dfs_rec::x 
+    Graph g(5);
+    g.addEdge(0, 1);
+    g.addEdge(0, 2);
+    g.addEdge(2, 3);
+    g.addEdge(2, 4);
+
+    Dfs_rec dfs(g);
+    dfs.dfsRun(g);
+
 
 
 
