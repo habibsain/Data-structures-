@@ -1,11 +1,11 @@
 
 CC = g++
 
-SRCS = dfs_rec.cpp graph.cpp
+SRCS = test.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
-TARGET = dfs_rec
+TARGET = test
 
 all: $(TARGET) run
 

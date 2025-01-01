@@ -1,5 +1,6 @@
 #ifndef GRAPH_H
 #define GRAPH_H
+
 #include <iostream>
 #include <vector>
 #include <utility>
@@ -32,6 +33,10 @@ class Graph {
 
         };
     public:
+
+        int size(){
+            return len;
+        }
 
         void addEdge(int u, int v){
             if(u >= len || v >= len){
@@ -75,6 +80,15 @@ class Graph {
                     cout << u << ": ";
                     for(auto v: wAdjList[u]){
                         cout << "("<< v.first << ", " << v.second << "), ";
+                    }
+                    cout << endl;
+                }
+            }
+            else{
+                for(auto i =0; i < uAdjList.size();  i++){
+                    cout << i << ": ";
+                    for(auto j: uAdjList[i]){
+                        cout << j <<", ";
                     }
                     cout << endl;
                 }
