@@ -2,13 +2,26 @@
 #include <vector>
 #include <utility>
 #include "graph.hpp"
-//#include "dfs_itr.hpp"
+#include "dfs_itr.hpp"
 #include "dfs_rec.hpp"
 
 typedef vector<pair<int,int>> wAdj;
 typedef vector<vector<int>> uAdj;
 
 int main(){
+
+
+    //Dfs iterative
+    Graph g(5);
+    g.addEdge(0,5);
+    g.addEdge(0,1);
+
+    Dfs_itr dfs(g);
+
+    dfs.
+
+
+
 /*
     //DFS recursive
     //UnWeighted
@@ -21,11 +34,13 @@ int main(){
 
     Dfs_rec dfs(g);
     dfs.dfsRun(g);
-
 */
 
-    Graph g(1);
-    cout << g.size() << endl;
+
+    //Graph g(1);
+    //cout << g.size() << endl;
+    //g.resize(5);
+    //cout << g.size() << endl;
 
 
 

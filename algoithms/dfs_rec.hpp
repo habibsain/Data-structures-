@@ -15,7 +15,7 @@ class Dfs_rec
 
     public: 
 
-    Dfs_rec(Graph& graph, bool isDirected = false, bool isWeighted = false){
+    Dfs_rec(Graph& graph){
         int len = graph.size();
         visited.resize(len,false);
         prev.resize(len, -1);

@@ -44,6 +44,11 @@ class Graph {
                 len = numVertices;
             }   
         }
+        //Check if it is weighted
+        bool isWeighted(){return weighted;}
+
+        //check if it is directed
+        bool isDirected(){return directed;}
 
         void addEdge(int u, int v){
             if(u >= len || v >= len){
