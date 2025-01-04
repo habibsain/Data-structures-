@@ -8,6 +8,7 @@
 using namespace std;
 
 class Graph {
+    // out of two only one is used based on user input
     vector<vector<int>> uAdjList;
     vector<vector<pair<int,int>>> wAdjList;
     int len;
@@ -16,10 +17,22 @@ class Graph {
     bool directed; 
         //Constructor
     public:
-        Graph(int numVertices, bool isDirected = false, bool isWeighted = false){
+        Graph(int numVertices = 0, bool isDirected = false, bool isWeighted = false){
             directed = isDirected;
             weighted = isWeighted;
-            
+
+            //If there is input then resize 
+            if(numVertices != 0){    
+            //call resize method for this instance
+                this->resize(numVertices);
+            }
+        };
+
+        int size(){
+            return len;
+        }
+        //option to resize graph later
+        void resize(int numVertices){
             if(weighted){
                 //cout << wAdjList.size() << endl;
                 wAdjList.resize(numVertices);
@@ -29,13 +42,7 @@ class Graph {
             else{
                 uAdjList.resize(numVertices);
                 len = numVertices;
-            }
-
-        };
-    public:
-
-        int size(){
-            return len;
+            }   
         }
 
         void addEdge(int u, int v){

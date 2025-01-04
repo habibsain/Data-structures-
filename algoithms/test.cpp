@@ -9,7 +9,7 @@ typedef vector<pair<int,int>> wAdj;
 typedef vector<vector<int>> uAdj;
 
 int main(){
-
+/*
     //DFS recursive
     //UnWeighted
     //UnDirected
@@ -22,7 +22,10 @@ int main(){
     Dfs_rec dfs(g);
     dfs.dfsRun(g);
 
+*/
 
+    Graph g(1);
+    cout << g.size() << endl;
 
 
 
