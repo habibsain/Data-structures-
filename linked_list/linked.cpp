@@ -1,3 +1,5 @@
+//algorithm to reverse a linked list
+
 #include<iostream>
 using namespace std;
 
